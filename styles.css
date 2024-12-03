@@ -65,7 +65,7 @@
     padding: 1em 0;
   }
   
-  /* Button Styles */
+ /* Button Styles */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -75,9 +75,16 @@
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .btn:hover {
   background-color: #0056b3; /* Darker blue on hover */
   cursor: pointer;
 }
+
+/* Hidden class for hiding elements */
+.hidden {
+  display: none;
+}
+
