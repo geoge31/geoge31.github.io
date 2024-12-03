@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
     <script>
       // JavaScript to toggle visibility of sections
-      function toggleSection(sectionId) {
+      function toggleSection(sectionId, event) {
+        event.preventDefault();  // Prevent the page from scrolling
+
         const allSections = document.querySelectorAll('.toggle-section');
         
         // Hide all sections first
@@ -88,10 +90,10 @@
     <!-- Left Navigation Panel -->
     <nav class="sidebar">
       <ul>
-        <li><a href="#home" onclick="toggleSection('home')" data-key="HomeSection">Home</a></li>
-        <li><a href="#about" onclick="toggleSection('about')" data-key="AboutSection">About</a></li>
-        <li><a href="#cv" onclick="toggleSection('cv')" data-key="CVSection">CV</a></li>
-        <li><a href="#contact" onclick="toggleSection('contact')" data-key="ContactSection">Contact</a></li>
+        <li><a href="#home" onclick="toggleSection('home', event)" data-key="HomeSection">Home</a></li>
+        <li><a href="#about" onclick="toggleSection('about', event)" data-key="AboutSection">About</a></li>
+        <li><a href="#cv" onclick="toggleSection('cv', event)" data-key="CVSection">CV</a></li>
+        <li><a href="#contact" onclick="toggleSection('contact', event)" data-key="ContactSection">Contact</a></li>
       </ul>
     </nav>
 
