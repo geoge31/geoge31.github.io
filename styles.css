@@ -1,71 +1,78 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  /* Layout */
-  .container {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh; /* Full viewport height */
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    background-color: #f4f4f4;
-    width: 250px;
-    padding: 1em;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-  }
-  
-  .sidebar li {
-    margin: 1em 0;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .sidebar a:hover {
-    color: #007BFF; /* Highlight color */
-  }
-  
-  /* Main Content */
-  .main-content {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f4f4f4;
+  width: 250px;
+  padding: 1em;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 1em 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: #007BFF; /* Highlight color */
+}
+
+/* Main Content */
+.main-content {
     flex: 1;
     padding: 2em;
     background-color: #ffffff;
-  }
-  
-  /* Footer */
-  .footer {
+}
+
+.profile-photo {
+  width: 150px;  /* Adjust width as necessary */
+  height: auto;
+  border-radius: 50%;  /* To make it circular */
+  margin-top: 20px;  /* Add margin if necessary */
+}
+
+/* Footer */
+.footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1em 0;
-  }
-  
- /* Button Styles */
+}
+
+/* Button Styles */
 .btn {
   display: inline-block;
   padding: 10px 20px;

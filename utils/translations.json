@@ -1,0 +1,23 @@
+{
+    "en": {
+      "title": "My Web Page",
+      "home": "Welcome!",
+      "about": "About Me",
+      "about-content": "This is the about section. You can add more details about yourself here.",
+      "cv": "My CV",
+      "preview-cv": "Preview CV",
+      "contact": "Contact",
+      "greet": "This is the main body of the website. Add your content here."
+    },
+    "gr": {
+      "title": "Η Σελίδα Μου",
+      "home": "Καλώς ήρθατε!",
+      "about": "Σχετικά με Εμένα",
+      "about-content": "Εδώ μπορείτε να βρείτε περισσότερες πληροφορίες που αφορούν εμένα.",
+      "cv": "Βιογραφικό",
+      "preview-cv": "Προβολή",
+      "contact": "Επικοινωνία",
+      "greet": "Αυτό είναι το κύριο σώμα της ιστοσελίδας. Προσθέστε το περιεχόμενό σας εδώ."
+    }
+  }
+  

@@ -29,15 +29,45 @@
       }
 
       // Language toggle functionality
+      // function toggleLanguage() {
+      //   const currentLanguage = document.documentElement.lang;
+      //   if (currentLanguage === 'en') {
+      //     document.documentElement.lang = 'gr';
+      //     document.getElementById('navbar-title').textContent = 'Η Ιστοσελίδα Μου';
+      //   } else {
+      //     document.documentElement.lang = 'en';
+      //     document.getElementById('navbar-title').textContent = 'My Website';
+      //   }
+      // }
+      // function toggleLanguage() {
+      //   const currentLanguage = document.documentElement.lang;
+      //   if (currentLanguage === 'en') {
+      //     document.documentElement.lang = 'gr';
+      //     document.getElementById('navbar-title').textContent = 'Η Ιστοσελίδα Μου'; // Greek Title
+      //   } else {
+      //     document.documentElement.lang = 'en';
+      //     document.getElementById('navbar-title').textContent = 'My Website'; // English Title
+      //   }
+      // }
       function toggleLanguage() {
-        const currentLanguage = document.documentElement.lang;
-        if (currentLanguage === 'en') {
-          document.documentElement.lang = 'gr';
-          document.getElementById('navbar-title').textContent = 'Η Ιστοσελίδα Μου';
-        } else {
-          document.documentElement.lang = 'en';
-          document.getElementById('navbar-title').textContent = 'My Website';
-        }
+        const currentLanguage = document.documentElement.lang === 'en' ? 'gr' : 'en';
+        document.documentElement.lang = currentLanguage;
+
+        // Load the translation JSON
+        fetch('utils/translations.json')
+          .then(response => response.json())
+          .then(translations => {
+            const langData = translations[currentLanguage];
+
+            // Update text based on data-key attributes
+            document.querySelectorAll('[data-key]').forEach(element => {
+              const key = element.getAttribute('data-key');
+              if (langData[key]) {
+                element.textContent = langData[key];
+              }
+            });
+          })
+          .catch(error => console.error('Error loading translations:', error));
       }
     </script>
     <style>
@@ -50,7 +80,7 @@
 <body>
   <!-- Top Navbar -->
   <header class="navbar">
-    <h1>My Website</h1>
+    <h1 id="navbar-title">My Website</h1> <!-- Added id="navbar-title" here -->
     <button class="language-toggle" onclick="toggleLanguage()">Gr / En</button>
   </header>
 
@@ -66,22 +96,21 @@
     </nav>
 
     <!-- Main Content Area -->
-    <!-- Main Content Area -->
     <main class="main-content">
       <section id="home" class="toggle-section">
-        <h2>Welcome!</h2>
-        <p>This is the main body of the website. Add your content here.</p>
+        <h2 data-key="home">Welcome!</h2>
+        <p data-key="greet">This is the main body of the website. Add your content here.</p>
       </section>
 
       <section id="about" class="toggle-section hidden">
-        <h2>About Me</h2>
-        <p>This is the about section. You can add more details about yourself here.</p>
+        <h2 data-key="about">About Me</h2>
+        <p data-key="about-content">This is the about section. You can add more details about yourself here.</p>
       </section>
 
       <section id="cv" class="toggle-section hidden">
-        <h2>My CV</h2>
+        <h2 data-key="cv">My CV</h2>
         <p>Click the button below to preview or download my CV:</p>
-        <button onclick="previewCV()" class="btn">Preview CV</button>
+        <button onclick="previewCV()" class="btn" data-key="preview-cv">Preview CV</button>
         <a href="documents/cv.pdf" download class="btn">Download My CV</a>
       </section>
 
