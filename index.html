@@ -6,22 +6,38 @@
     <title>Website Layout</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
     <script>
-      // JavaScript to toggle CV section visibility
-      function toggleCV() {
-        const cvSection = document.getElementById('cv');
-        cvSection.classList.toggle('hidden');
+      // JavaScript to toggle visibility of sections
+      function toggleSection(sectionId) {
+        const allSections = document.querySelectorAll('.toggle-section');
+        
+        // Hide all sections first
+        allSections.forEach((section) => {
+          if (section.id !== sectionId) {
+            section.classList.add('hidden');
+          }
+        });
+
+        // Toggle the clicked section
+        const section = document.getElementById(sectionId);
+        section.classList.toggle('hidden');
       }
-      
-      // JavaScript to hide opened sections
-      function hideOpenSections() {
-        const cvSection = document.getElementById('cv');
-        cvSection.classList.toggle('hidden');
-      }
-  
+
       // Function to preview the CV
       function previewCV() {
         const previewWindow = window.open('documents/cv.pdf', '_blank');
         previewWindow.focus();
+      }
+
+      // Language toggle functionality
+      function toggleLanguage() {
+        const currentLanguage = document.documentElement.lang;
+        if (currentLanguage === 'en') {
+          document.documentElement.lang = 'gr';
+          document.getElementById('navbar-title').textContent = 'Η Ιστοσελίδα Μου';
+        } else {
+          document.documentElement.lang = 'en';
+          document.getElementById('navbar-title').textContent = 'My Website';
+        }
       }
     </script>
     <style>
@@ -35,31 +51,43 @@
   <!-- Top Navbar -->
   <header class="navbar">
     <h1>My Website</h1>
+    <button class="language-toggle" onclick="toggleLanguage()">Gr / En</button>
   </header>
 
   <div class="container">
     <!-- Left Navigation Panel -->
     <nav class="sidebar">
       <ul>
-        <li><a href="#home" onclick="hideOpenSections()">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#cv" onclick="toggleCV()">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" onclick="toggleSection('home')">Home</a></li>
+        <li><a href="#about" onclick="toggleSection('about')">About</a></li>
+        <li><a href="#cv" onclick="toggleSection('cv')">CV</a></li>
+        <li><a href="#contact" onclick="toggleSection('contact')">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Main Content Area -->
+    <!-- Main Content Area -->
     <main class="main-content">
-      <section>
+      <section id="home" class="toggle-section">
         <h2>Welcome!</h2>
         <p>This is the main body of the website. Add your content here.</p>
       </section>
 
-      <section id="cv" class="hidden">
+      <section id="about" class="toggle-section hidden">
+        <h2>About Me</h2>
+        <p>This is the about section. You can add more details about yourself here.</p>
+      </section>
+
+      <section id="cv" class="toggle-section hidden">
         <h2>My CV</h2>
         <p>Click the button below to preview or download my CV:</p>
         <button onclick="previewCV()" class="btn">Preview CV</button>
         <a href="documents/cv.pdf" download class="btn">Download My CV</a>
+      </section>
+
+      <section id="contact" class="toggle-section hidden">
+        <h2>Contact</h2>
+        <p>You can reach me at email@example.com.</p>
       </section>
       
     </main>
