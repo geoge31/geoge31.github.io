@@ -1,6 +1,10 @@
 {
     "en": {
       "title": "My Web Page",
+      "HomeSection": "Home",
+      "AboutSection": "About",
+      "CVSection": "CV",
+      "ContactSection": "Contact",
       "home": "Welcome!",
       "about": "About Me",
       "about-content": "This is the about section. You can add more details about yourself here.",
@@ -11,6 +15,10 @@
     },
     "gr": {
       "title": "Η Σελίδα Μου",
+      "HomeSection": "Αρχική",
+      "AboutSection": "Προσωπικές Πληροφορίες",
+      "CVSection": "Βιογραφικό",
+      "ContactSection": "Επικοινωνία",
       "home": "Καλώς ήρθατε!",
       "about": "Σχετικά με Εμένα",
       "about-content": "Εδώ μπορείτε να βρείτε περισσότερες πληροφορίες που αφορούν εμένα.",

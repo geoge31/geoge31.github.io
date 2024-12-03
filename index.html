@@ -88,10 +88,10 @@
     <!-- Left Navigation Panel -->
     <nav class="sidebar">
       <ul>
-        <li><a href="#home" onclick="toggleSection('home')">Home</a></li>
-        <li><a href="#about" onclick="toggleSection('about')">About</a></li>
-        <li><a href="#cv" onclick="toggleSection('cv')">CV</a></li>
-        <li><a href="#contact" onclick="toggleSection('contact')">Contact</a></li>
+        <li><a href="#home" onclick="toggleSection('home')" data-key="HomeSection">Home</a></li>
+        <li><a href="#about" onclick="toggleSection('about')" data-key="AboutSection">About</a></li>
+        <li><a href="#cv" onclick="toggleSection('cv')" data-key="CVSection">CV</a></li>
+        <li><a href="#contact" onclick="toggleSection('contact')" data-key="ContactSection">Contact</a></li>
       </ul>
     </nav>
 
@@ -99,6 +99,7 @@
     <main class="main-content">
       <section id="home" class="toggle-section">
         <h2 data-key="home">Welcome!</h2>
+        <img src="imgs/photo_profile.png" alt="Profile Photo" class="profile-photo">
         <p data-key="greet">This is the main body of the website. Add your content here.</p>
       </section>
 
